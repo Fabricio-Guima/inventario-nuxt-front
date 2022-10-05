@@ -3,8 +3,12 @@
     <BaseLoading :isLoading="isLoading"></BaseLoading>
     <AdminTemplate>
       <div slot="body">
-        <h1>TEste</h1>
-        <div class="row">
+        <div class="row justify-content-end">
+          <div class="col-2">
+            <button type="button" class="btn btn-dark btn-sm">
+              <i class="fas fa-plus"></i> Adicionar
+            </button>
+          </div>
           <div class="col-12">
             <div class="card-body">
               <table class="table">
