@@ -57,16 +57,20 @@ export default {
     measures: [],
   }),
   methods: {
-    async fetchSomenthing() {
-      const response = await this.$axios.$get(`/measures`);
-      // console.log("response", response);
-      this.measures = response.data;
-      this.isLoading = false;
+    async getMeasures() {
+      try {
+        const response = await this.$axios.$get(`/measures`);
+        this.measures = response.data;
+      } catch (error) {
+        console.log(error);
+      } finally {
+        this.isLoading = false;
+      }
     },
   },
 
   async mounted() {
-    this.fetchSomenthing();
+    this.getMeasures();
   },
 };
 </script>
